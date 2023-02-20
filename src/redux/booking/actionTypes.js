@@ -7,3 +7,4 @@ export const DES_TO_SELECTED = "desTo/selected";
 export const GUESTS_SELECTED = "guests/selected";
 export const JOURNEY_DATE_SELECTED = "journeyDate/selected";
 export const RESET_DROPDOWNS = "dropdown/reset";
+export const IS_VALID = "isvalid/isvalid";

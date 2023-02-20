@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../../Styles/styles.css";
-import { book, resetDropdowns } from "../../redux/booking/actionsCreators";
+import {
+  book,
+  isValid,
+  resetDropdowns,
+} from "../../redux/booking/actionsCreators";
 
 const Book = () => {
   const desFrom = useSelector((state) => state.bookings.desFrom);
@@ -13,8 +17,6 @@ const Book = () => {
   const bookings = useSelector((state) => state.bookings.bookings);
 
   const dispatch = useDispatch();
-
-  const [isValid, setIsValid] = useState(false);
 
   const handleBookClick = (event) => {
     event.preventDefault();
@@ -30,7 +32,7 @@ const Book = () => {
       dispatch(book(bookingData));
       dispatch(resetDropdowns()); // reset the dropdown menus
       console.log(bookings);
-      setIsValid(false);
+      dispatch(isValid(false));
     }
   };
 

@@ -5,6 +5,7 @@ import {
   DES_FROM_SELECTED,
   DES_TO_SELECTED,
   GUESTS_SELECTED,
+  IS_VALID,
   JOURNEY_DATE_SELECTED,
   RESET_DROPDOWNS,
 } from "./actionTypes";
@@ -60,6 +61,9 @@ const bookingReducer = (state = initialState, action) => {
         guests: 0,
         classs: "",
       };
+
+    case IS_VALID:
+      return { ...state, IsValid: action.payload };
 
     default:
       return state;

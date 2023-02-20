@@ -5,6 +5,7 @@ import {
   DES_FROM_SELECTED,
   DES_TO_SELECTED,
   GUESTS_SELECTED,
+  IS_VALID,
   JOURNEY_DATE_SELECTED,
   RESET_DROPDOWNS,
 } from "./actionTypes";
@@ -64,3 +65,10 @@ export const deleteBooking = (BookingId) => {
 export const resetDropdowns = () => ({
   type: RESET_DROPDOWNS,
 });
+
+export const isValid = (value) => {
+  return {
+    type: IS_VALID,
+    payload: value,
+  };
+};
